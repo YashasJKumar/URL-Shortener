@@ -15,7 +15,7 @@ const port = 8001;
 app.set("view engine", "ejs")
 app.set("views", path.resolve("./views"))
 
-connectMongoDb("mongodb://localhost:27017/url-shortener")
+connectMongoDb("mongodb://localhost:27017/<collection-name-here>")
     .then(r => console.log("MongoDB Connected")).catch(err => console.error(err));
 
 app.use(express.json());
