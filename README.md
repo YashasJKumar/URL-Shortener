@@ -53,6 +53,10 @@ A simple URL shortener built using Node.js, Express, MongoDB, and JWT for authen
 - `POST /` - Shorten a URL.
 - `GET /analytics/:shortUrl` - Get all shortened URLs for the logged-in user.
 
+## Preview
+![preview_image](https://github.com/user-attachments/assets/c1b1a3a8-1f18-4b97-b962-044f6fadf808)
+
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
