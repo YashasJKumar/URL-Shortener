@@ -8,7 +8,8 @@
 //     return sessionIdToUserMap.get(id)
 // }
 const jwt = require("jsonwebtoken");
-const SECRET = '<secret-key-here>';
+// const SECRET = process.env.SECRET;
+const SECRET = "<YOUR-SECRET-KEY>"
 
 function setUser(user){
     return jwt.sign({
