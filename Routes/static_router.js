@@ -16,6 +16,10 @@ router.get('/login', (req, res) => {
     return res.render('login')
 })
 
+router.get('/forgot-password', (req, res) => {
+    return res.render('forgot-password')
+})
+
 router.get("/admin/dashboard", allowAccesTo(['ADMIN']), async (req, res) => {
     // ADMIN -> Can see all URL's
     const allUrls = await URL.find()
