@@ -20,7 +20,7 @@ function allowAccesTo(roles = []){
             return res.redirect('/login')
         if (!roles.includes(req.user.role)) {
             res.status(403).set("Content-Type", "text/html");
-            return res.send("<h1 style='color: red'>You are Unauthorized!</h1>");
+            return res.send("<h1 style='color: red; text-align: center;'>You are Unauthorized!</h1>");
         }
         return next()
     }
