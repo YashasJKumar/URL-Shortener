@@ -7,9 +7,9 @@
             text-align: center;
         }
         table {
-            margin: 20px auto; /* Centers the table horizontally */
-            border-collapse: collapse; /* Optional: improves table borders */
-            width: 80%; /* Optional: adjust width */
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
         }
 
         th, td {
@@ -31,7 +31,12 @@
     <title>URL Shortener</title>
 </head>
 <body>
-    <h1>URL Shortener</h1>
+    <h1 style="color: blue;padding: 10px">URL Shortener</h1>
+
+    <button style="padding: 10px;background-color: red;float: right;margin-right: 10px;">
+        <a href="/user/logout" style="color: white;">Logout</a>
+    </button>
+
     <div id="container">
         <form method="post" action="/url">
             <label>Enter your URL: </label>
@@ -43,7 +48,9 @@
     <br>
     <div>
         <% if (locals.id) { %>
-            <p>Your shortened URL: http://localhost:8001/url/<%= id %></p>
+            <p>Your shortened URL:
+                <a href="http://localhost:8001/url/<%= id %>" target="_blank" >http://localhost:8001/url/<%= id %></a>
+            </p>
         <% } %>
     </div>
     <br>
@@ -73,6 +80,13 @@
             </tbody>
         </table>
         <% } %>
+
+            <button style="padding: 10px;">
+                <a href="/" style="color: white;">
+                    <img src="https://www.svgrepo.com/show/20284/refresh.svg" height="20px" width="20px">
+                </a>
+            </button>
+
     </div>
 </body>
 </html>
