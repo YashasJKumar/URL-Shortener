@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: Tahoma, serif;
+            text-align: center;
+        }
+        button, input{
+            font-size: 15px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Log IN</title>
+</head>
+<body>
+<h1 style="color: blue;padding: 10px">URL Shortener</h1>
+<h2>Login User</h2>
+<form action="/user/login" method="POST">
+    <label>Email Address: </label>
+    <input type="email" name="email" placeholder="johndoe@gmail.com" required/>
+    <br><br>
+    <label>Password: </label>
+    <input type="password" name="password" placeholder="Enter Password" required/>
+    <p style="font-size: 13px;">
+        <a href="/forgot-password">Forgot Password?</a>
+    </p>
+    <button type="submit">Submit</button>
+</form>
+<h5>
+    <a href="/sign-up">Don't have an account? Register</a>
+</h5>
+</body>
+</html>

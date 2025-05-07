@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: Tahoma, serif;
+            text-align: center;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #000; /* Adds borders */
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light gray background for headers */
+        }
+        button{
+            font-size: 15px;
+        }
+        input{
+            font-size: 15px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <h1 style="color: blue;padding: 10px">URL Shortener</h1>
+
+    <button style="padding: 10px;background-color: red;float: right;margin-right: 10px;">
+        <a href="/user/logout" style="color: white;">Logout</a>
+    </button>
+
+    <div id="container">
+        <form method="post" action="/url">
+            <label>Enter your URL: </label>
+            <input type="text" name="url" id="url" placeholder="www.example.com" />
+            <br><br>
+            <button type="submit" id="shorten">Shorten</button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <% if (locals.id) { %>
+            <p>Your shortened URL:
+                <a href="http://localhost:8001/url/<%= id %>" target="_blank" >http://localhost:8001/url/<%= id %></a>
+            </p>
+        <% } %>
+    </div>
+    <br>
+    <div>
+        <h4>Previously Shortened URL's </h4>
+    </div>
+    <div>
+        <% if (locals.urls) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>SL.No</th>
+                    <th>ShortURL</th>
+                    <th>Redirect URL</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% urls.forEach((url, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= url.shortUrl %></td>
+                    <td><%= url.redirectUrl %></td>
+                    <td><%= url.visitHistory.length %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <% } %>
+
+            <button style="padding: 10px;">
+                <a href="/" style="color: white;">
+                    <img src="https://www.svgrepo.com/show/20284/refresh.svg" height="20px" width="20px">
+                </a>
+            </button>
+
+    </div>
+</body>
+</html>
